@@ -1,4 +1,4 @@
-# Toss Tech Design 참고 스킬 팩
+# Toss Tech Design 참고 스킬
 
 > Toss Tech Design 아티클을 참고해 만든 비공식 스킬 팩입니다.
 >
