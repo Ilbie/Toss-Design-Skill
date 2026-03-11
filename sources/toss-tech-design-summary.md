@@ -1,10 +1,4 @@
-﻿# Toss Tech Design 카테고리 전수 정리
-
-- 작성일: 2026-03-11
-- 수집 범위: `https://toss.tech/category/design` 1~26페이지
-- 확인 방식: Playwright MCP로 카테고리 페이지 전수 브라우징, 대표 글 본문 직접 확인
-- 총 글 수: 129개
-- 태그 분포(중복 포함): Product Design 61, UX Research 28, Tools Product Design 14, Brand Design 11, UX Writing 9, Graphic Design 9, Platform Design 7, Interaction Design 5
+﻿# Toss Tech Design 
 
 ## 한눈에 보기
 
