@@ -1,94 +1,104 @@
-# Toss Tech Design 참고 스킬
+<div align="center">
 
-> Toss Tech Design 아티클을 참고해 만든 비공식 스킬 팩입니다.
->
-> Toss Tech Design 아티클에서 드러나는 제품 사고, 리서치 운영, 내부 툴, UX Writing, 접근성, 브랜드 판단 방식을 참고할 수 있도록 정리했습니다.
+# 🎨 Toss Tech Design 참고 스킬
 
-## 버전 안내
+**toss.tech 디자인 아티클 143편에서 뽑은 판단 기준을, 출처와 함께 AI 코딩 에이전트에게**
 
-- `1.3.0` 업데이트에서 스킬 크기를 줄였습니다.
-- 이전과 같은 결과 퀄리티가 나오지 않는 경우 `1.2.0` 버전을 사용해 주세요.
+[![Skill version](https://img.shields.io/badge/skill-v2-3182F6?style=flat-square)](SKILL.md)
+[![Articles](https://img.shields.io/badge/articles-143-191F28?style=flat-square)](references/sources.md)
+[![References](https://img.shields.io/badge/references-21-4E5968?style=flat-square)](references/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 
-## 데모 미리보기
+![Claude Code](https://img.shields.io/badge/Claude_Code-D97757?style=flat-square&logo=anthropic&logoColor=white)
+![OpenCode](https://img.shields.io/badge/OpenCode-000000?style=flat-square)
+![Codex](https://img.shields.io/badge/Codex-412991?style=flat-square)
 
-- 아래 UI 이미지는 이 스킬로 만든 데모 화면입니다.
-- 이미지 생성에 사용한 모델: `Google Gemini 3.1 Pro`
+[설치](#설치) · [이럴 때 씁니다](#이럴-때-씁니다) · [버전 비교](#버전-비교) · [꿀팁](#꿀팁) · [구성](#구성) · [주의](#주의)
 
-> [!TIP]
-> 디자인 시안이나 UI 결과는 제 경험상 Gemini 계열이 꽤 잘 나오는 편이었습니다. 특히 디자인 지향 작업은 `Google Gemini 3.1 Pro` 쪽 결과가 상대적으로 안정적이라고 느꼈습니다.
+</div>
 
-| 캘린더 / 날짜 선택 | 프로필 / 설정 |
-|---|---|
-| ![Calendar date picker UI](img/calendar-date-picker.png) | ![Profile settings screen UI](img/profile-settings-screen.png) |
+> [!NOTE]
+> 비공식 스킬입니다. Toss(비바리퍼블리카)와 제휴하거나 승인받은 관계가 없습니다.
 
-## 빠른 설치
+## 소개
 
-### 권장 설치 (`npx`)
+디자인 원칙, UX 라이팅, 퍼널, 접근성, 리서치, 시각 스타일까지. toss.tech 아티클 본문에 나온 판단 기준만 골라 정리했습니다. 모든 규칙에는 근거가 된 글의 제목과 URL이 붙어 있어서, 에이전트가 "왜 이렇게 만들었는지"를 출처로 설명합니다.
 
-가장 간단한 설치 방법입니다.
+## 설치
 
 ```bash
 npx skills add Ilbie/Toss-Design-Skill
 ```
 
-- Claude Code, OpenCode, Codex 계열에서 쓰는 범용 skills CLI 방식입니다.
+설치하면 끝입니다. 요청이 스킬과 맞으면 에이전트가 알아서 불러옵니다.
 
-### 수동 설치 (`git clone`)
+## 이럴 때 씁니다
 
-환경에 따라 직접 경로를 지정해서 설치하고 싶다면 아래 명령어를 사용하면 됩니다.
+| 상황 | 예시 요청 |
+| --- | --- |
+| 화면·UI 만들기 | "설정 화면 만들어줘" |
+| 화면·플로우 설계와 리뷰 | "이 가입 플로우 리뷰해줘" |
+| UX 문구·에러 메시지·푸시 | "결제 실패 에러 문구 다듬어줘" |
+| 접근성·다크패턴 점검 | "이 해지 화면 다크패턴 아니야?" |
+| 리서치·A/B 테스트·기능 판단 | "이 기능 넣을지 뺄지 정리해줘" |
 
-### OpenCode
+## 버전 비교
 
-```bash
-mkdir -p ~/.config/opencode/skills && git clone https://github.com/Ilbie/Toss-Design-Skill ~/.config/opencode/skills/toss-tech-design
-```
+같은 "설정 화면" 요청을 스킬 버전별로 만든 결과입니다.
 
-### Claude Code
+<table>
+  <tr>
+    <th align="center">v1.3</th>
+    <th align="center">v2</th>
+  </tr>
+  <tr>
+    <td align="center"><img src="images/compare-v1.3.png" alt="스킬 v1.3으로 만든 설정 화면" width="300"></td>
+    <td align="center"><img src="images/compare-v2.png" alt="스킬 v2로 만든 설정 화면" width="300"></td>
+  </tr>
+</table>
 
-```bash
-mkdir -p ~/.claude/skills && git clone https://github.com/Ilbie/Toss-Design-Skill ~/.claude/skills/toss-tech-design
-```
+<p align="center"><sub>두 스크린샷 모두 <b>Claude Opus 5.5 (effort: medium)</b> 로 생성</sub></p>
 
-### Codex
+## 꿀팁
 
-```bash
-mkdir -p ~/.agents/skills && git clone https://github.com/Ilbie/Toss-Design-Skill ~/.agents/skills/toss-tech-design
-```
+> [!TIP]
+> 여러 모델로 돌려 봤을 때 **Anthropic 계열 모델(Claude)** 이 이 스킬을 가장 잘 활용하는 것 같습니다.
 
 ## 구성
 
-- `SKILL.md` - 실제로 불러서 쓰는 스킬 본문
-- `sources/toss-tech-design-summary.md` - Toss Tech 디자인 아티클을 바탕으로 정리한 참고 요약본
-- `sources/toss-tech-design-summary.md`는 참고용 요약이며 원문을 대체하지 않습니다. 정확한 맥락과 해석이 필요하면 원문을 우선 확인해 주세요.
+```
+Toss-Design-Skill/
+├── SKILL.md        # 핵심 원칙과 상황별로 읽을 파일 안내
+├── references/     # 주제별 정리 21개 + 출처 목록(sources.md)
+└── images/         # README용 버전 비교 스크린샷
+```
 
-## 사용 방법
+<details>
+<summary><b>references/ 전체 목록 펼치기</b></summary>
 
-원하는 환경의 skills 디렉터리에 이 저장소를 그대로 복사해 사용하면 됩니다.
+| 분류 | 파일 |
+| --- | --- |
+| 원칙과 판단 | `principles.md` · `decision-making.md` · `ethics.md` |
+| 문제 해결 | `problem-solving.md` · `problem-solving-cases.md` |
+| UX 라이팅 | `ux-writing.md` · `ux-writing-errors-marketing.md` |
+| 흐름과 구조 | `funnels-and-flows.md` · `domain-flows-and-ia.md` |
+| 시각과 인터랙션 | `visual-style.md` · `interaction.md` · `graphics-branding.md` |
+| 접근성 | `accessibility-inclusion.md` |
+| 리서치와 데이터 | `research-methods.md` · `research-ops.md` · `data-and-experiments.md` |
+| 팀과 시스템 | `design-systems-and-standards.md` · `working-with-teams.md` · `team-roles-and-growth.md` · `internal-tools-b2b.md` |
+| AI | `ai-practices.md` |
+| 출처 | `sources.md` |
 
-- OpenCode: `~/.config/opencode/skills/toss-tech-design/`
-- Claude Code: `~/.claude/skills/toss-tech-design/`
-- Codex 계열: `~/.agents/skills/toss-tech-design/`
+</details>
 
-## 참고 및 출처
+## 주의
 
-- 1차 참고 출처: `https://toss.tech/category/design`
-- 이 저장소는 `toss.tech`의 디자인 아티클을 참고해 작성했습니다.
-- 세부 참고 내용은 `sources/toss-tech-design-summary.md`에 정리되어 있습니다.
-- Toss, 토스, toss.tech 및 관련 상표, 서비스명, 원문 아티클의 권리는 각 권리자에게 있습니다.
+> [!WARNING]
+> - 사고방식과 원칙을 참고하기 위한 자료입니다. Toss 화면을 그대로 따라 만드는 용도가 아닙니다.
+> - Toss 명칭, 로고, 토스페이스·Toss Product Sans 같은 전용 자산은 결과물에 쓰지 마세요.
 
-## 비제휴 안내
+내용이 문제가 된다면 GitHub Issue나 메일로 알려 주세요. 확인 후 바로 수정하거나 삭제하겠습니다.
 
-- 이 저장소는 Toss(비바리퍼블리카) 또는 관련 조직과 공식적인 관련, 승인, 후원, 제휴가 없는 비공식 저장소입니다.
-- Toss의 화면, 브랜드, 컴포넌트, 아이콘, 문구를 그대로 복제하기 위한 목적이 아니라, 아티클에서 드러나는 사고방식과 설계 원칙을 참고하기 위한 목적으로 작성했습니다.
+## 라이선스
 
-## 문의 및 삭제 요청
-
-- 권리자 또는 이해관계자께서 본 저장소 내용이 문제가 된다고 판단하시면 GitHub Issue로 연락해 주세요.
-- 공개 Issue가 어려우면 GitHub 프로필을 통한 연락 수단으로 알려 주셔도 됩니다.
-- 확인 후 필요하면 즉시 수정, 비공개 전환, 또는 삭제 조치하겠습니다.
-
-## 주의사항 및 면책
-
-- 이 저장소는 법률 자문이 아니며, 이 스킬을 사용해 생성하거나 배포한 결과물의 책임은 사용자에게 있습니다.
-- 특히 Toss의 UI/UX를 과도하게 모사하는 결과물은 문제를 일으킬 수 있습니다.
-- Toss, 토스, toss.tech 명칭이나 로고, 마크, 캠페인 문구 등 브랜딩 요소를 결과물에 그대로 사용하지 마세요.
+[MIT](LICENSE) 라이선스는 이 저장소에서 직접 쓴 문서에만 적용됩니다. toss.tech 원문과 이미지, 상표의 권리는 각 권리자에게 있습니다.
