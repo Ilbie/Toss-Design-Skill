@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎨 Toss Tech Design 참고 스킬
+# 🎨 Toss Tech Design 참고 스킬 v2
 
 **toss.tech 디자인 아티클 143편에서 뽑은 판단 기준을, 출처와 함께 AI 코딩 에이전트에게**
 
